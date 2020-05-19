@@ -9,7 +9,8 @@ Setup:  Add your twitch credentials in a textfile, structured like "login_data.t
 ____
 Configurtion:
 This bot is default configured. You can use your custom configuration in following lines in bot.py:
-```
+
+```python
 def __init__(...):
   ...
   # check flood period
@@ -24,7 +25,6 @@ def __init__(...):
   # deactivate slowmode after this period
   self.flood_protection_timeout_in_seconds = 30
   ...
-```  
- 
+``` 
 ____    
 Usage:  py -m twitch_auto_slowmode_bot.main login_data.txt
