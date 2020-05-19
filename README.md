@@ -8,7 +8,7 @@ ____
 Setup:  Add your twitch credentials in a textfile, structured like "login_data.txt".
 ____
 Configurtion:
-This bot is default configured. You can use your custoum configuration in following lined in bot.py:
+This bot is default configured. You can use your custom configuration in following lines in bot.py:
 ```
 def __init__(...):
   ...
