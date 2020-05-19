@@ -11,7 +11,7 @@ def main():
     if not os.path.exists("logs"):
         os.mkdir("logs")
 
-    file = "logs\\errors.log"
+    file = "logs/errors.log"
     logging.basicConfig(filename=file, filemode='w', level=logging.ERROR)
 
     if len(sys.argv) != 2:
