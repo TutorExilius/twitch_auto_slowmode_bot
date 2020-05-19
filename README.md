@@ -2,7 +2,7 @@
 A Twitch Auto Slow Mode bot as chat flood protection.
 
 
-IRC Token generation: https://www.twitchapps.com/tmi/
+IRC Token generation (IRC_OAUTH_TOKEN): https://www.twitchapps.com/tmi/
 
 
 Setup:  Add your twitch credentials in a textfile, structured like "login_data.txt".
