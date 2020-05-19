@@ -5,14 +5,13 @@ import asyncio
 
 
 class Bot(commands.Bot, ABC):
-    def __init__(self, client_id, client_secret, user, channel, irc_token, user_id):
+    def __init__(self, client_id, client_secret, user, channel, irc_token):
         super().__init__(irc_token=irc_token, client_id=client_id,
                          client_secret=client_secret,
                          scopes="channel:moderate",
                          nick=user, prefix='!',
                          initial_channels=[channel])
 
-        self.user_id = user_id
         self.username = user
         self.channel = channel
         self.self_user = None

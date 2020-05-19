@@ -30,15 +30,13 @@ def main():
     user = lines[2].lower()
     channel = lines[3].lower()
     irc_token = lines[4]
-    user_id = lines[5]
 
     retries = 0
     sleep_time = 0
 
     while True:
         try:
-            my_bot = Bot(user_id=user_id,
-                         client_id=client_id,
+            my_bot = Bot(client_id=client_id,
                          client_secret=client_secret,
                          user=user,
                          channel=channel,
