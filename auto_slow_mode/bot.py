@@ -34,6 +34,9 @@ class Bot(commands.Bot, ABC):
         # deactivate slowmode after this period
         self.flood_protection_timeout_in_seconds = 30
 
+        # slow duration
+        self.slow_duration = 5
+
         print(f"Connect as: {self.username}", flush=True)
         print(f"Connecting to {self.ws._host} (secured connection) ...\n", flush=True)
 
@@ -57,7 +60,7 @@ class Bot(commands.Bot, ABC):
             while self._online:
                 if self._flood_protection_activated:
                     await asyncio.sleep(self.flood_protection_timeout_in_seconds)
-                    await self.go_unslow(5)
+                    await self.go_unslow()
                     self._flood_protection_activated = False
                 else:
                     await asyncio.sleep(self.flood_check_intervall_in_seconds)
@@ -68,7 +71,7 @@ class Bot(commands.Bot, ABC):
                             flood_activation_counter_ -= 1
                             print(f"Flood Warning Counter - left: {flood_activation_counter_}")
                         else:
-                            await self.go_slow(5)
+                            await self.go_slow(self.slow_duration)
                             self._flood_protection_activated = True
                             flood_activation_counter_ = self.flood_activation_counter
                     else:
@@ -87,5 +90,5 @@ class Bot(commands.Bot, ABC):
     async def go_slow(self, duration):
         await self.ws.send_privmsg(self.channel, f"/slow {duration}")
 
-    async def go_unslow(self, duration):
+    async def go_unslow(self):
         await self.ws.send_privmsg(self.channel, "/slowoff")
