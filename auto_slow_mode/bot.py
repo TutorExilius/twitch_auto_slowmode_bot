@@ -82,7 +82,6 @@ class Bot(commands.Bot, ABC):
             print(ex)
 
     async def event_message(self, message):
-        await self.handle_commands(message)
         self._message_cnt += 1
 
     async def go_slow(self, duration):
