@@ -6,6 +6,10 @@ IRC Token generation (IRC_OAUTH_TOKEN): https://www.twitchapps.com/tmi/
 
 ____
 Setup:  Add your twitch credentials in a textfile, structured like "login_data.txt".
+
+____
+Install: pip install --user -r requirements.txt
+
 ____
 Configuration:
 This bot is default configured. You can use your custom configuration in following lines in bot.py:
