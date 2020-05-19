@@ -1,1 +1,1 @@
-git+http://github.com/tutorexilius/twitchio.git#egg=twitchio
+git+https://github.com/tutorexilius/twitchio.git#egg=twitchio
